@@ -1,0 +1,39 @@
+{% extends 'kids_fitness_app/base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'kids_fitness_app/css/sign_up.css' %}">
+    <script src="{% static 'kids_fitness_app/js/register_main.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<img src="{% static 'kids_fitness_app/img/autoreg.png' %}" alt="" class="bg-image">
+<div class="form-container">
+    <div class="form-inner">
+        <h2 class="form-title">Реєстрація</h2>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="post" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Логін" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Пошта" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="Підтвердження пароля" required>
+            </div>
+            <button type="submit" class="btn btn-custom">Зареєструватись</button>
+        </form>
+        <p class="paragraph mt-3">Вже зареєстровані? <a href="{% url 'login' %}">Увійти</a></p>
+    </div>
+</div>
+{% endblock %}

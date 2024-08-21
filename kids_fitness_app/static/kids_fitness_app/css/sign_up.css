@@ -1,0 +1,145 @@
+.content {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.form-title {
+    color: #fff;
+    font-size: 45px; /* Уменьшен размер шрифта в 2 раза от предыдущего */
+    text-align: center;
+}
+
+.form-inner {
+    background-color: rgba(17,60,101,1);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 60px; /* Уменьшен padding в 2 раза */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px; /* Минимальная ширина */
+    min-height: 300px; /* Минимальная высота */
+    max-width: 90%; /* Максимальная ширина */
+    max-height: 90%; /* Максимальная высота */
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin: 15px 0; /* Уменьшен margin в 2 раза */
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    background-color: rgba(17,60,101,1);
+    padding: 15px; /* Уменьшен padding в 2 раза */
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 45px; /* Уменьшен размер шрифта в 2 раза */
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.btn-custom {
+    width: 50%;
+    padding: 15px; /* Уменьшен padding в 2 раза */
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(203, 230, 255);
+    color: black;
+    font-size: 27px; /* Уменьшен размер шрифта в 2 раза */
+    cursor: pointer;
+    margin-top: 15px; /* Уменьшен margin в 2 раза */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="email"] {
+    text-align: center;
+    width: calc(100% - 22px);
+    background-color: rgba(17,60,101,1);
+    padding: 15px; /* Уменьшен padding в 2 раза */
+    margin: 15px 0; /* Уменьшен margin в 2 раза */
+    border: 1px солид #ffffff;
+    border-radius: 5px;
+    font-size: 45px; /* Уменьшен размер шрифта в 2 раза */
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .form-inner {
+        width: 80%;
+        height: auto;
+        padding: 15%; /* Уменьшен padding в 2 раза */
+    }
+
+    .btn-custom {
+        font-size: 9vw; /* Уменьшен размер шрифта в 2 раза */
+    }
+
+    .form-control {
+        font-size: 9vw; /* Уменьшен размер шрифта в 2 раза */
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="email"] {
+        font-size: 9vw; /* Уменьшен размер шрифта в 2 раза */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-inner {
+        width: 90%;
+        height: auto;
+        padding: 15%; /* Уменьшен padding в 2 раза */
+    }
+
+    .btn-custom {
+        font-size: 7.5vw; /* Уменьшен размер шрифта в 2 раза */
+    }
+
+    .form-control {
+        font-size: 7.5vw; /* Уменьшен размер шрифта в 2 раза */
+    }   
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="email"] {
+        font-size: 7.5vw; /* Уменьшен размер шрифта в 2 раза */
+    }
+}
