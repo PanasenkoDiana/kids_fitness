@@ -4,6 +4,11 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Image
 
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
 from django.conf import settings
@@ -112,7 +117,12 @@ def user_logout(request):
     messages.info(request, 'Ви успішно вийшли із системи')
     return redirect('main')
 
-
+@csrf_exempt
+def webhook(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        # Обработайте данные
+        return JsonResponse({"status": "success"})
 
 
 
